@@ -5,6 +5,7 @@ export const Img = styled.img`
   height:100%;
   object-fit: cover;
   overflow: hidden;
+  border-radius: 10px;
 `
 
 export const GridContainer = styled.section`
@@ -24,7 +25,8 @@ row-gap: 3rem;
 `
 export const BlogCard = styled.div`
   border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
+  background-color: #005FB8;
+  box-shadow: 3px 3px 20px rgba(255, 255, 255, 0.5);
   text-align: center;
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -42,8 +44,9 @@ export const TitleContent = styled.div`
 export const HeaderThree = styled.h3`
   font-weight: 500;
   letter-spacing: 2px;
-  color: #9cc9e3;
+  color: #EDC40C;
   padding: .5rem 0;
+  margin-top: 1rem;
   font-size: ${(props) => props.title ? '3rem' : '2rem'};
 `;
 
@@ -52,7 +55,7 @@ export const Hr = styled.hr`
   height: 3px;
   margin: 20px auto;
   border: 0;
-  background: #d0bb57;
+  background: #FF620D;
 `;
 
 export const Intro = styled.div`
@@ -89,14 +92,18 @@ export const UtilityList = styled.ul`
 `;
 
 export const ExternalLinks = styled.a`
-color:#d4c0c0;
+color: #FFFFFF;
+opacity: 0.9;
 font-size: 1.6rem;
 padding:1rem 1.5rem;
-background: #6b3030;
+margin:0rem 1rem;
+background: #D15E00;
 border-radius: 15px;
 transition: 0.5s;
+width: 100%;
 &:hover{
-  background: #801414;
+  font-weight: bold;
+  opacity: 1;
 
 }
 `;
