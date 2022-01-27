@@ -1,16 +1,21 @@
 export default {
   // Temp fonts
   fonts: {
-    title: "Space Grotesk, sans-serif",
-    main: "Space Grotesk, sans-serif"
+    title: "Asul, sans-serif",
+    main: "Laila, sans-serif",
+    project: "'Droid Serif', serif"
   },
   // Colors for layout
   colors: {
-    primary1: "#EDC40C",
-    background1: "#004585",
-    accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "#DB540B",
-    background2: "hsl(232.7,27.3%,23.7%)",
+    primary: "#006EB3",
+    primaryMuted: "#006EB3AA",
+    accent1: "#FF7C30",
+    accent1Muted: "#FF7C30AA",
+    accent2: "#FFCD19",
+    accent3: "#FF6B7F",
+    dark: "#002640",
+    darkMuted: "#002640AA",
+    light: "#FCF7EB"
   },
   // Breakpoints for responsive design
   breakpoints: {

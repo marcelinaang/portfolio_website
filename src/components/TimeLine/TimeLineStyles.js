@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
-  background: #004585;
+  background: ${(props) => props.theme.colors.light};
   padding: 0rem;
   list-style:none;
   display: flex;
@@ -40,7 +40,7 @@ export const CarouselMobileScrollNode = styled.div`
 `
 
 export const CarouselItem = styled.div`
-  background: #004585;
+  background: ${(props) => props.theme.colors.light};
   border-radius: 3px;
   max-width: 196px;
 
@@ -51,7 +51,7 @@ export const CarouselItem = styled.div`
   @media ${props => props.theme.breakpoints.sm} {
     margin-left: 32px;
     min-width: 120px;
-    background: #002A52;
+    background: ${(props) => props.theme.colors.primary};
     padding: 4px;
     align-content: start;
     scroll-snap-align: start;
@@ -71,7 +71,7 @@ export const CarouselItemTitle = styled.h4`
   letter-spacing: 0.02em;
   display: flex;
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
-  background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
+  background: linear-gradient(121.57deg, ${(props) => props.theme.colors.dark} 10%, ${(props) => props.theme.colors.darkMuted} 30.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 8px;
@@ -85,6 +85,7 @@ export const CarouselItemTitle = styled.h4`
   @media ${props => props.theme.breakpoints.sm} {
     font-size: 16px;
     line-height: 24px;
+    -webkit-text-fill-color: ${(props) => props.theme.colors.light};
   }
 `
 export const CarouselItemImg = styled.svg`
@@ -103,7 +104,7 @@ export const CarouselItemText = styled.p`
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${(props) => props.theme.colors.dark};
   padding-right: 16px;
 
   @media ${props => props.theme.breakpoints.md} {
@@ -115,6 +116,7 @@ export const CarouselItemText = styled.p`
     font-size: 10px;
     line-height: 16px;
     padding-right: 0;
+    color: ${(props) => props.theme.colors.light};
   }
 `
 export const CarouselButtons = styled.div`

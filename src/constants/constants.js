@@ -2,11 +2,21 @@ export const projects = [
     {
         title: "Modern Real Estate",
         description:
-            "Using React, NextJS & Chakra UI, this real estate app is built to explore properties available for rent in UAE by utilizing Bayut API. This app features advanced property filtering and property details page with an image carousel. ",
+            "Using React, NextJS & Chakra UI, this real estate app is built to explore properties available for rent in UAE by utilizing Bayut API. This app features advanced property filtering and property details page with an image carousel.",
         image: "/images/1.png",
         tags: ["React", "Next"],
         source: "https://github.com/marcelinaang/jsm_realestate",
         visit: "https://jsm-realestate-enmm1zc63-marcelinaang.vercel.app/",
+        id: 1,
+    },
+    {
+        title: "Professional Portfolio",
+        description:
+            "Using React & NextJS, this portfolio site is built to introduce who I am and showcase what I do. This site is fully responsive, with the main difference being the timeline displayed as a scrollable carousel in the 'About' section on mobile devices.",
+        image: "/images/2.png",
+        tags: ["React", "Next"],
+        source: "https://github.com/marcelinaang/portfolio_website",
+        visit: "#",
         id: 0,
     },
 ];

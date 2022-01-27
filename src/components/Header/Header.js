@@ -1,33 +1,28 @@
 import Link from "next/link";
 import React from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import {FaTelegram} from 'react-icons/fa'
-import { DiCssdeck } from "react-icons/di";
+import { FaTelegram } from "react-icons/fa";
 
 import {
+    BrandImage,
+    BrandLink,
     Container,
     Div1,
     Div2,
     Div3,
     NavLink,
     SocialIcons,
-    Span
+    Span,
 } from "./HeaderStyles";
 
 const Header = () => (
     <Container>
         <Div1>
             <Link href="/">
-                <a
-                    style={{
-                        display: "flex",
-                        alignItems: "center",
-                        color: "white",
-                    }}
-                >
-                    <DiCssdeck size="3rem" />
-                    <Span>Portfolio</Span>
-                </a>
+                <BrandLink>
+                    <BrandImage src="/favicon.ico" />
+                    <Span>Marcelina Anggraeni</Span>
+                </BrandLink>
             </Link>
         </Div1>
         <Div2>
