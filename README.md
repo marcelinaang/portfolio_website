@@ -3,3 +3,6 @@ This is a project called Professional Portfolio, loosely based on tutorial by Ja
 Technologies used:
 -   ReactJS
 -   NextJS
+
+UI:
+-   Styled Components 
