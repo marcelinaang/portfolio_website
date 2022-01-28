@@ -1,5 +1,15 @@
 export const projects = [
     {
+        title: "Cryptoverse",
+        description:
+            "Using React, Redux Toolkit, Ant Design & Chart.js, this cryptocurrency  app is built to explore top 100 coins and cryptocurency news by utilizing Coinranking API & Bing News Search API. This app features coins detailed statistics, price chart, and filtered news.",
+        image: "/images/3.png",
+        tags: ["React", "Redux Toolkit"],
+        source: "https://github.com/marcelinaang/cryptoapp",
+        visit: "https://cryptoverse-marcelinaanggraeni.netlify.app/",
+        id: 2,
+    },
+    {
         title: "Modern Real Estate",
         description:
             "Using React, NextJS & Chakra UI, this real estate app is built to explore properties available for rent in UAE by utilizing Bayut API. This app features advanced property filtering and property details page with an image carousel.",
