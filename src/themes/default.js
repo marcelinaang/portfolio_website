@@ -1,8 +1,11 @@
 export default {
   // Temp fonts
   fonts: {
-    title: "Asul, sans-serif",
-    main: "Laila, sans-serif",
+    // Lato, Poppins, Josefin Sans, Montserrat, Laila, Asul, Quicksand, Catamaran, ABeeZee, Spartan, Philosopher
+    // Poppins, Spartan, Josefin Sans, Montserrat, ABeeZee, Quicksand, Catamaran, Philosopher
+    title: "Spartan, sans-serif",
+    // Lato, Josefin Sans, Montserrat, Laila, Asul, Quicksand, ABeeZee, Spartan
+    main: "ABeeZee, sans-serif",
     project: "'Droid Serif', serif"
   },
   // Colors for layout

@@ -8,7 +8,7 @@ export const projects = [
         tags: ["React", "Redux Toolkit"],
         source: "https://github.com/marcelinaang/cryptoapp",
         visit: "https://cryptoverse-marcelinaanggraeni.netlify.app/",
-        id: 2,
+        id: 3,
     },
     {
         title: "Realtor",
@@ -22,6 +22,17 @@ export const projects = [
         id: 1,
     },
     {
+        title: "Advice App",
+        subtitle: "Random Quote App",
+        description:
+            "Using React and axios, this quote app is built to get a random quote from Advice Slip API.",
+        image: "/images/4.png",
+        tags: ["React", "axios"],
+        source: "https://github.com/marcelinaang/advice_app",
+        visit: "https://advice-marcelinaanggraeni.netlify.app/",
+        id: 4,
+    },
+    {
         title: "My Professional Portfolio",
         subtitle: "Professional Portfolio App",
         description:
@@ -30,7 +41,7 @@ export const projects = [
         tags: ["React", "Next"],
         source: "https://github.com/marcelinaang/portfolio_website",
         visit: "#",
-        id: 0,
+        id: 2,
     },
 ];
 

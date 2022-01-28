@@ -10,6 +10,7 @@ import {
 import {
     List,
     ListContainer,
+    ListIcon,
     ListItem,
     ListParagraph,
     ListTitle,
@@ -25,8 +26,9 @@ const Technologies = () => (
         </SectionText>
         <List>
             <ListItem>
-                <DiReact size="3rem" />
-                <br />
+                <ListIcon>
+                    <DiReact size="3rem" />
+                </ListIcon>
                 <ListContainer>
                     <ListTitle>Front-End</ListTitle>
                     <ListParagraph>
@@ -36,8 +38,9 @@ const Technologies = () => (
                 </ListContainer>
             </ListItem>
             <ListItem>
-                <DiFirebase size="3rem" />
-                <br />
+                <ListIcon>
+                    <DiFirebase size="3rem" />
+                </ListIcon>
                 <ListContainer>
                     <ListTitle>Back-End</ListTitle>
                     <ListParagraph>
@@ -48,8 +51,9 @@ const Technologies = () => (
                 </ListContainer>
             </ListItem>
             <ListItem>
-                <FiFigma size="2rem" />
-                <br />
+                <ListIcon>
+                    <FiFigma size="2.25rem" />
+                </ListIcon>
                 <ListContainer>
                     <ListTitle>UI/UX</ListTitle>
                     <ListParagraph>

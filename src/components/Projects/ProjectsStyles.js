@@ -18,7 +18,7 @@ export const GridContainer = styled.section`
     place-items: center;
     column-gap: 2rem;
     row-gap: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     @media ${(props) => props.theme.breakpoints.md} {
         place-items: center;
     }
