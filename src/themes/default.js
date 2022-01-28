@@ -15,7 +15,8 @@ export default {
     accent3: "#FF6B7F",
     dark: "#002640",
     darkMuted: "#002640AA",
-    light: "#FCF7EB"
+    light: "#FCF7EB",
+    lightMuted: "#FCF7EBCC"
   },
   // Breakpoints for responsive design
   breakpoints: {

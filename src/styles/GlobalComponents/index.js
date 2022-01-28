@@ -175,7 +175,7 @@ export const ButtonBack = styled.div`
     width: ${({ alt }) => (alt ? "160px" : "260px")};
     height: ${({ alt }) => (alt ? "40px" : "60px")};
     border-radius: 50px;
-    font-size: ${({ alt }) => (alt ? "14px" : "18px")};
+    font-size: ${({ alt }) => (alt ? "20px" : "24px")};
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -183,8 +183,8 @@ export const ButtonBack = styled.div`
     margin: ${({ alt, form }) => (alt || form ? "0" : "0 0 80px")};
     color: ${(props) => props.theme.colors.light};
     background: ${( props ) =>
-        props.alt
-        ? `linear-gradient(270deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.accent2} 100%)`
+        !props.alt
+        ? `linear-gradient(270deg, ${props.theme.colors.accent3} 0%, ${props.theme.colors.accent1} 100%)`
         : props.theme.colors.accent1};
     cursor: pointer;
     transition: 0.5s ease;
@@ -222,8 +222,8 @@ export const ButtonFront = styled.button`
     width: 100%;
     height: 100%;
     background:${( props ) =>
-      props.alt
-      ? `linear-gradient(270deg, ${props.theme.colors.accent2} 0%, ${props.theme.colors.accent3} 100%)`
+      !props.alt
+      ? `linear-gradient(270deg, ${props.theme.colors.accent3} 0%, ${props.theme.colors.accent1} 100%)`
       : props.theme.colors.accent1Muted};
     opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
     transition: 0.4s ease;
