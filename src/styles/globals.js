@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     background: ${props => props.theme.colors.light};
     color: ${props => props.theme.colors.dark};
     cursor: default;
+    transition: all 0.50s linear;
 
   }
   h1,h2,h3,h4,h5,h6,button {

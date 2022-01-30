@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "../../themes/default";
+import {lightTheme as theme} from "../../themes/variables";
 
 const BackgroundAnimation = () => (
     <div>

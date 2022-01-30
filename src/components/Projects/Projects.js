@@ -80,27 +80,6 @@ const Projects = () => {
                                 </TitleContent>
                                 <Hr />
                                 <Intro>{subtitle}</Intro>
-                                {/* <CardInfo>{description}</CardInfo> 
-                        <div>
-                            <Hr />
-                            <TitleContent>Stack</TitleContent>
-                            <TagList>
-                                {tags.map((tag, i) => (
-                                    <Tag key={i}>{tag}</Tag>
-                                ))}
-                            </TagList>
-                        </div>
-                        <UtilityList>
-                            <ExternalLinks href={source}>
-                                <FaGithub />
-                                Code
-                            </ExternalLinks>
-                            <ExternalLinks href={visit}>
-                                <BiLinkExternal />
-                                Visit
-                            </ExternalLinks>
-                        </UtilityList>
-                        */}
                             </CardContent>
                         </BlogCard>
                     )
