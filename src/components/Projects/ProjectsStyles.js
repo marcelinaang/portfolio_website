@@ -19,8 +19,11 @@ export const GridContainer = styled.section`
     column-gap: 2rem;
     row-gap: 3rem;
     margin-bottom: 3rem;
-    @media ${(props) => props.theme.breakpoints.md} {
-        place-items: center;
+    @media ${(props) => props.theme.breakpoints.lg} {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 2.5rem 0;
     }
     @media ${(props) => props.theme.breakpoints.sm} {
         display: flex;
@@ -43,8 +46,21 @@ export const BlogCard = styled.div`
         box-shadow: 1px 1px 30px ${(props) => props.theme.colors.lightEnhanced};
         cursor: pointer;
     }
+    @media ${(props) => props.theme.breakpoints.lg} {
+        width: 320px;
+        height: 180px;
+    }
+    @media ${(props) => props.theme.breakpoints.md} {
+        width: 400px;
+        height: 225px;
+    }
     @media ${(props) => props.theme.breakpoints.sm} {
-        width: 100%;
+        width: 320px;
+        height: 180px;
+    }
+    @media ${(props) => props.theme.breakpoints.xs} {
+        width: 240px;
+        height: 135px;
     }
 `;
 export const CardContent = styled.div`
