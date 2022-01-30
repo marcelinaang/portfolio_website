@@ -12,15 +12,14 @@ export const Section = styled.section`
     grid-template-columns: 1fr 1fr;
 
     @media ${(props) => props.theme.breakpoints.md} {
-        padding: 24px 48px 0;
+        padding: ${(props) => (props.nopadding ? "0" : "24px 48px 0")};
+        width: calc(100vw - 96px);
         flex-direction: column;
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
         padding: ${(props) => (props.nopadding ? "0" : "16px 16px 0")};
-
         width: calc(100vw - 32px);
-        flex-direction: column;
     }
 `;
 
@@ -204,6 +203,13 @@ export const ButtonBack = styled.div`
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
+        width: 150px;
+        height: 36px;
+        font-size: 16px;
+        margin-bottom: ${({ alt }) => (alt ? "0" : "32px")};
+    }
+
+    @media ${(props) => props.theme.breakpoints.xs} {
         width: 100%;
         height: 32px;
         font-size: 14px;

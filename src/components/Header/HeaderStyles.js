@@ -31,9 +31,9 @@ export const Div1 = styled.div`
     }
 `;
 export const Div2 = styled.div`
-    grid-area: 1 / 2 / 2 / 4;
+    grid-area:1 / 2 / 2 / 5;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     @media ${(props) => props.theme.breakpoints.md} {
         grid-area: 1 / 3 / 2 / 3;
@@ -83,6 +83,7 @@ export const NavLink = styled.a`
     align-items: center;
     font-size: 2rem;
     line-height: 32px;
+    padding: 1rem;
     color: ${(props) => props.theme.colors.darkMuted};
     transition: 0.4s ease;
     &:hover {
@@ -90,8 +91,8 @@ export const NavLink = styled.a`
         opacity: 1;
         cursor: pointer;
     }
-    @media ${(props) => props.theme.breakpoints.sm} {
-        padding: 0.5rem;
+    @media ${(props) => props.theme.breakpoints.lg} {
+        padding: 0.75rem;
     }
 `;
 
