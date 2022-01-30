@@ -63,7 +63,7 @@ export const SectionText = styled.p`
     line-height: 40px;
     font-weight: 500;
     padding-bottom: 3.6rem;
-    color: ${(props) => props.theme.colors.primaryMuted};
+    color: ${(props) => props.theme.colors.darkMuted};
 
     @media ${(props) => props.theme.breakpoints.md} {
         max-width: 670px;
@@ -85,8 +85,8 @@ export const SectionDivider = styled.div`
     border-radius: 10px;
     background-color: #fff;
     background: ${(props) =>
-        props.colorAlt
-            ? `linear-gradient(270deg, ${props.theme.colors.accent2} 0%, ${props.theme.colors.accent1} 100%)`
+        !props.colorAlt
+            ? `linear-gradient(90deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.accent2} 100%)`
             : `linear-gradient(270deg, ${props.theme.colors.accent2} 0%, ${props.theme.colors.accent3} 100%)`};
 
     margin: ${(props) => (props.divider ? "4rem 0" : "")};
@@ -106,7 +106,7 @@ export const SectionSubText = styled.p`
     font-weight: 300;
     font-size: 18px;
     line-height: 32px;
-    color: ${(props) => props.theme.colors.primaryMuted };
+    color: ${(props) => props.theme.colors.primaryMuted};
 
     @media ${(props) => props.theme.breakpoints.md} {
         max-width: 672px;
@@ -171,26 +171,27 @@ export const SecondaryBtn = styled.button`
 `;
 
 export const ButtonBack = styled.div`
+    position: relative;
     width: ${({ alt }) => (alt ? "160px" : "260px")};
     height: ${({ alt }) => (alt ? "40px" : "60px")};
-    border-radius: 50px;
+    font-family: ${(props) => props.theme.fonts.title};
     font-size: ${({ alt }) => (alt ? "20px" : "24px")};
     font-weight: 600;
+    border-radius: 50px;
+    color: ${(props) => props.theme.colors.light};
+    background: ${(props) =>
+        !props.alt
+            ? `linear-gradient(90deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.accent2} 100%)`
+            : props.theme.colors.accent1};
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: ${({ alt, form }) => (alt || form ? "0" : "0 0 80px")};
-    color: ${(props) => props.theme.colors.light};
-    background: ${( props ) =>
-        !props.alt
-        ? `linear-gradient(270deg, ${props.theme.colors.accent3} 0%, ${props.theme.colors.accent1} 100%)`
-        : props.theme.colors.accent1};
-    cursor: pointer;
-    transition: 0.5s ease;
-    position: relative;
-    overflow: hidden;
     opacity: ${({ disabled }) => (disabled ? ".5" : ".85")};
-    
+    transition: 0.4s ease;
+    margin: ${({ alt, form }) => (alt || form ? "0" : "0 0 80px")};
+    cursor: pointer;
+    overflow: hidden;
+
     &:hover {
         opacity: 1;
     }
@@ -218,25 +219,25 @@ export const ButtonBack = styled.div`
 `;
 
 export const ButtonFront = styled.button`
-    border: none;
-    border-radius: 50px;
-    color: ${(props) => props.theme.colors.light};
-    display: flex;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background:${( props ) =>
-      !props.alt
-      ? `linear-gradient(270deg, ${props.theme.colors.accent3} 0%, ${props.theme.colors.accent1} 100%)`
-      : props.theme.colors.accent1Muted};
-    opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
-    transition: 0.4s ease;
     font-size: ${({ alt }) => (alt ? "20px" : "24px")};
     font-weight: 600;
+    border-radius: 50px;
+    border: none;
+    color: ${(props) => props.theme.colors.light};
+    background: ${(props) =>
+        !props.alt
+            ? `linear-gradient(90deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.accent2} 100%)`
+            : props.theme.colors.accent1Muted};
+    display: flex;
     align-items: center;
     justify-content: center;
+    opacity: ${({ disabled }) => (disabled ? ".5" : "1")};
+    transition: 0.4s ease;
     cursor: pointer;
     box-shadow: ${({ disabled }) =>
         disabled
@@ -267,6 +268,10 @@ export const ButtonFront = styled.button`
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
+        font-size: 16px;
+    }
+
+    @media ${(props) => props.theme.breakpoints.xs} {
         font-size: 14px;
     }
 `;

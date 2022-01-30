@@ -33,13 +33,14 @@ export const BlogCard = styled.div`
     overflow: hidden;
     position: relative;
     border-radius: 10px;
-    box-shadow: 3px 3px 20px ${(props) => props.theme.colors.darkMuted};
+    box-shadow: 1px 1px 8px ${(props) => props.theme.colors.lightEnhanced};
     text-align: center;
     width: 400px;
     height: 225px;
     transition: 0.3s;
     &:hover {
         transform: scale(1.05);
+        box-shadow: 1px 1px 30px ${(props) => props.theme.colors.lightEnhanced};
         cursor: pointer;
     }
     @media ${(props) => props.theme.breakpoints.sm} {
@@ -47,7 +48,7 @@ export const BlogCard = styled.div`
     }
 `;
 export const CardContent = styled.div`
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.lightMild};
     opacity: 0.8;
     width: 100%;
     height: 100%;
@@ -66,13 +67,13 @@ export const TitleContent = styled.div`
     z-index: 20;
     width: 100%;
     font-weight: 500;
-    color: ${(props) => props.theme.colors.accent2};
+    color: ${(props) => props.theme.colors.primary};
 `;
 
 export const HeaderThree = styled.h3`
     font-weight: 700;
     letter-spacing: 2px;
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.dark};
     padding: 0.5rem 0;
     margin-top: 1rem;
     transition: 0.3s;
@@ -89,7 +90,7 @@ export const Hr = styled.hr`
 
 export const Intro = styled.div`
     margin: 0.5rem auto;
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.darkMild};
     font-family: ${(props) => props.theme.fonts.title};
     font-style: italic;
     line-height: 18px;
@@ -99,7 +100,7 @@ export const CardInfo = styled.p`
     width: 100%;
     padding: 0 50px;
     margin: 1.5rem;
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.darkMuted};
     font-style: 2rem;
     line-height: 24px;
     text-align: justify;
@@ -133,12 +134,12 @@ export const ExternalLinks = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.light};
     opacity: 0.9;
     font-size: 1.6rem;
     padding: 1.25rem 2.5rem;
     margin: 0.5rem 1rem;
-    background: ${(props) => props.theme.colors.light};
+    background: ${(props) => props.theme.colors.primary};
     border-radius: 15px;
     transition: 0.5s;
     width: 100%;
@@ -165,7 +166,7 @@ export const TagList = styled.ul`
     }
 `;
 export const Tag = styled.li`
-    color: ${(props) => props.theme.colors.light};
+    color: ${(props) => props.theme.colors.dark};
     font-size: 1.35rem;
     padding: 0 2rem;
     @media ${(props) => props.theme.breakpoints.sm} {
@@ -174,7 +175,7 @@ export const Tag = styled.li`
 `;
 
 export const Modal = styled.div`
-    background-color: ${(props) => props.theme.colors.darkMuted};
+    background-color: ${(props) => props.theme.colors.darkEnhanced};
     display: ${(props) => `${props.display}`};
     flex-direction: column;
     align-items: center;
@@ -188,7 +189,7 @@ export const Modal = styled.div`
     overflow: auto;
 `;
 export const ModalContent = styled.div`
-    background-color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.light};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,14 +206,14 @@ export const ModalHeader = styled.div`
 `;
 export const CloseButton = styled.span`
     font-family: ${(props) => props.theme.fonts.title};
-    color: ${(props) => props.theme.colors.lightMuted};
+    color: ${(props) => props.theme.colors.dark};
     float: right;
     font-size: 30px;
     font-weight: bold;
     &:hover {
         text-decoration: none;
         cursor: pointer;
-        color: ${(props) => props.theme.colors.light};
+        color: ${(props) => props.theme.colors.darkMuted};
     }
 `;
 export const Img = styled.img`

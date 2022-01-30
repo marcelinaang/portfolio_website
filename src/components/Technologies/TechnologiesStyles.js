@@ -69,7 +69,7 @@ export const ListTitle = styled.h4`
     font-size: 28px;
     line-height: 32px;
     letter-spacing: 0.02em;
-    color: ${(props) => props.theme.colors.darkMuted};
+    color: ${(props) => props.theme.colors.primary};
     margin-bottom: 8px;
 
     @media ${(props) => props.theme.breakpoints.md} {
@@ -105,7 +105,7 @@ export const ListItem = styled.li`
     max-width: 320px;
     display: flex;
     flex-direction: column;
-    color: ${(props) => props.theme.colors.accent1};
+    color: ${(props) => props.theme.colors.primaryMuted};
 
     @media ${(props) => props.theme.breakpoints.md} {
         max-width: 203px;

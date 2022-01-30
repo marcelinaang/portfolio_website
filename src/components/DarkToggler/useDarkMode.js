@@ -8,7 +8,7 @@ export const useDarkMode = () => {
 
 export const DarkModeProvider = (props) => {
     const { children } = { ...props };
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
     const [loadingTheme, setLoadingTheme] = useState(true);
 
     const setMode = (mode) => {

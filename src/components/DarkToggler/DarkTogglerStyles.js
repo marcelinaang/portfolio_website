@@ -32,6 +32,7 @@ export const Toggler = styled.input`
     border-radius: 15px;
     width: 42px;
     height: 24px;
+    cursor: pointer;
     &:checked + ${ToggleLabel} {
         background: #505050;
         &::after {
