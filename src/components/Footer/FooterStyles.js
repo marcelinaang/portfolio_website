@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.section`
+    border-top: 1px solid ${(props) => props.theme.colors.darkEnhanced};
     width: calc(100vw - 96px);
     max-width: 1040px;
     padding: 2rem 48px 40px;
@@ -101,16 +102,15 @@ export const Slogan = styled.p`
 export const SocialContainer = styled.div`
     display: flex;
     align-items: center;
+    margin-top: 1.5rem;
 
     @media ${(props) => props.theme.breakpoints.md} {
         justify-content: center;
-        padding-right: 16px;
         flex-wrap: wrap;
     }
 `;
 
 export const LinkList = styled.ul`
-    border-top: 1px solid ${(props) => props.theme.colors.darkEnhanced};
     display: grid;
     grid-template-columns: repeat(3, minmax(85px, 220px));
     gap: 40px;

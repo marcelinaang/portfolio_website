@@ -1,16 +1,10 @@
 import React from "react";
-import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai";
 import { FaTelegram } from "react-icons/fa";
 
 import { SocialIcons } from "../Header/HeaderStyles";
 import {
-    CompanyContainer,
     FooterWrapper,
-    LinkColumn,
-    LinkItem,
-    LinkList,
-    LinkTitle,
-    Slogan,
     SocialContainer,
     SocialIconsContainer,
 } from "./FooterStyles";
@@ -18,16 +12,11 @@ import {
 const Footer = () => {
     return (
         <FooterWrapper>
-            <LinkList>
-                <LinkColumn>
-                    <LinkTitle>Email</LinkTitle>
-                    <LinkItem href="mailto:marcelina.ang@gmail.com">
-                        marcelina.ang@gmail.com
-                    </LinkItem>
-                </LinkColumn>
-            </LinkList>
             <SocialIconsContainer>
                 <SocialContainer>
+                    <SocialIcons href="mailto:marcelina.ang@gmail.com">
+                        <AiFillMail size="3rem" />
+                    </SocialIcons>
                     <SocialIcons href="https://github.com/marcelinaang/">
                         <AiFillGithub size="3rem" />
                     </SocialIcons>

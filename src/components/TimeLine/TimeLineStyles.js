@@ -50,13 +50,13 @@ export const CarouselItem = styled.div`
   
   @media ${props => props.theme.breakpoints.sm} {
     margin-left: 32px;
-    min-width: 200px;
-    min-height: 100px;
+    min-width: 240px;
+    min-height: 135px;
     background: ${(props) => props.theme.colors.primary};
-    padding: 16px;
+    padding: 2rem;
     align-content: start;
     scroll-snap-align: start;
-    border-radius: 3px;
+    border-radius: 5px;
     overflow: visible;
     position: relative;
     height: fit-content;
@@ -108,14 +108,9 @@ export const CarouselItemText = styled.p`
   color: ${(props) => props.theme.colors.darkMuted};
   padding-right: 16px;
 
-  @media ${props => props.theme.breakpoints.md} {
+  @media ${props => props.theme.breakpoints.sm} {
     font-size: 16px;
     line-height: 18px;
-    padding-right: 32px;
-  }
-  @media ${props => props.theme.breakpoints.sm} {
-    font-size: 14px;
-    line-height: 16px;
     padding-right: 0;
     color: ${(props) => props.theme.colors.light};
   }
