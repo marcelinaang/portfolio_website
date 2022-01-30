@@ -7,18 +7,18 @@ const BackgroundAnimation = () => {
     const [animation1, animation2, animation3, animationLine, lineOpacity] =
         theme === "light"
             ? [
-                  lightTheme.colors.primary,
                   lightTheme.colors.accent1,
+                  lightTheme.colors.primary,
                   lightTheme.colors.accent2,
                   lightTheme.colors.darkMuted,
-                  0.35
+                  0.35,
               ]
             : [
-                  darkTheme.colors.primary,
                   darkTheme.colors.accent1,
+                  darkTheme.colors.primary,
                   darkTheme.colors.accent2,
                   darkTheme.colors.darkMuted,
-                  0.1
+                  0.15,
               ];
 
     return (

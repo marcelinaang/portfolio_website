@@ -203,6 +203,9 @@ export const Modal = styled.div`
     left: 0;
     top: 0;
     overflow: auto;
+    @media ${(props) => props.theme.breakpoints.md} {
+        padding: 0;
+    }
 `;
 export const ModalContent = styled.div`
     background-color: ${(props) => props.theme.colors.light};
@@ -212,6 +215,9 @@ export const ModalContent = styled.div`
     border-radius: 10px;
     width: 80%;
     padding: 1.5rem 0;
+    @media ${(props) => props.theme.breakpoints.md} {
+        width: 100%;
+    }
 `;
 export const ModalHeader = styled.div`
     display: flex;

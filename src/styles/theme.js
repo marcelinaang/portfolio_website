@@ -4,15 +4,17 @@ import GlobalStyles from "./globals";
 import { lightTheme, darkTheme } from "../themes/variables";
 
 import { useDarkMode } from "../components/DarkToggler/useDarkMode";
+import { useScrollHandler } from "../components/Projects/useScrollHandler";
 
 const Theme = (props) => {
     const { children } = { ...props };
     const { theme } = useDarkMode();
     const themeMode = theme === "light" ? lightTheme : darkTheme;
+    const {scrollable} = useScrollHandler();
 
     return (
         <ThemeProvider theme={themeMode}>
-            <GlobalStyles />
+            <GlobalStyles scrollable={scrollable} />
             {children}
         </ThemeProvider>
     );

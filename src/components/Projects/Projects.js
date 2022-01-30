@@ -30,18 +30,22 @@ import {
 } from "../../styles/GlobalComponents";
 
 import { projects } from "../../constants/constants";
+import { useScrollHandler } from "./useScrollHandler";
 
 const Projects = () => {
     const [modalDisplay, setModalDisplay] = useState("none");
     const [projectDetails, setProjectDetails] = useState({});
+    const { setScrollable } = useScrollHandler();
 
     const handleOpen = (selectedProject) => {
         setModalDisplay("flex");
         setProjectDetails(selectedProject);
+        setScrollable(false);
     };
 
     const handleClose = () => {
         setModalDisplay("none");
+        setScrollable(true)
     };
 
     return (
