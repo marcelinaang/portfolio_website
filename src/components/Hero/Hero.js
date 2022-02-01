@@ -11,11 +11,11 @@ import { LeftSection } from "./HeroStyles";
 const Hero = () => (
     <Section row nopadding>
         <LeftSection>
-            <SectionTitle main center>
+            <SectionTitle main center hero>
                 Welcome to <br />
                 My Professional Portfolio
             </SectionTitle>
-            <SectionText>I'm Marcel, a front-end web developer.</SectionText>
+            <SectionText hero>I'm Marcel, a front-end web developer.</SectionText>
             <Button onClick={() => (window.location = "mailto:marcelina.ang@gmail.com")}>
                 Contact Me
             </Button>

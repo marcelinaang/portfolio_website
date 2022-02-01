@@ -24,17 +24,15 @@ export const Section = styled.section`
 `;
 
 export const SectionTitle = styled.h2`
-    font-weight: 700;
+    font-weight: 600;
     font-size: ${(props) => (props.main ? "48px" : "52px")};
     line-height: ${(props) => (props.main ? "48px" : "60px")};
     width: max-content;
     max-width: 100%;
-    background: linear-gradient(
-        121.57deg,
-        ${(props) => props.theme.colors.primary} 18.77%,
-        ${(props) => props.theme.colors.primaryMuted} 60.15%
-    );
+    background: ${(props) => props.hero ? props.theme.colors.dark : props.theme.colors.darkMuted};
+    backgorund-clip: text;
     -webkit-background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
     margin-bottom: 16px;
     padding: ${(props) => (props.main ? "58px 0 16px" : "0")};
@@ -59,29 +57,29 @@ export const SectionTitle = styled.h2`
 
 export const SectionText = styled.p`
     max-width: 800px;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: ${(props) => props.hero? '24px' : '20px'};
+    line-height: ${(props) => props.hero? '40px' : '32px'};
     font-weight: 500;
     padding-bottom: 3.6rem;
     color: ${(props) => props.theme.colors.darkMuted};
 
     @media ${(props) => props.theme.breakpoints.md} {
+        font-size: ${(props) => props.hero? '20px' : '18px'};
         max-width: 670px;
-        font-size: 20px;
-        line-height: 32px;
+        line-height: ${(props) => props.hero? '32px' : '24px'};
         padding-bottom: 24px;
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: ${(props) => props.hero? '16px' : '14px'};
+        line-height: ${(props) => props.hero? '24px' : '20px'};
         padding-bottom: 16px;
     }
 `;
 
 export const SectionDivider = styled.div`
-    width: 64px;
-    height: 6px;
+    width: 100px;
+    height: 4px;
     border-radius: 10px;
     background-color: #fff;
     background: ${(props) =>
@@ -92,13 +90,13 @@ export const SectionDivider = styled.div`
     margin: ${(props) => (props.divider ? "4rem 0" : "")};
 
     @media ${(props) => props.theme.breakpoints.md} {
-        width: 48px;
-        height: 4px;
+        width: 75px;
+        height: 2.5px;
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        width: 32px;
-        height: 2px;
+        width: 50px;
+        height: 1.25px;
     }
 `;
 export const SectionSubText = styled.p`
@@ -181,8 +179,8 @@ export const ButtonBack = styled.div`
     color: ${(props) => props.theme.colors.light};
     background: ${(props) =>
         !props.alt
-            ? `linear-gradient(90deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.accent2} 100%)`
-            : props.theme.colors.accent1};
+            ? `linear-gradient(120deg, ${props.theme.colors.accent1} -15%, ${props.theme.colors.primary} 50%, ${props.theme.colors.accent2} 115%)`
+            : props.theme.colors.accent1Muted};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -231,7 +229,7 @@ export const ButtonFront = styled.button`
     color: ${(props) => props.theme.colors.light};
     background: ${(props) =>
         !props.alt
-            ? `linear-gradient(90deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.accent2} 100%)`
+            ? `linear-gradient(120deg, ${props.theme.colors.accent1} 0%, ${props.theme.colors.primary} 50%, ${props.theme.colors.accent2} 100%)`
             : props.theme.colors.accent1Muted};
     display: flex;
     align-items: center;

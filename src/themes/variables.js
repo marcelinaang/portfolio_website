@@ -2,19 +2,20 @@ export const lightTheme = {
     // Temp fonts
     fonts: {
         title: "Spartan, sans-serif",
-        main: "ABeeZee, sans-serif",
+        main: "Spartan, sans-serif",
         project: "'Droid Serif', serif",
     },
     // Colors for layout
     colors: {
-        primary: "#004ab4", // 600
-        primaryMuted: "#4b97ff", // 300
-        primaryExtraMuted: "#7db5ff", // 200
-        
-        accent1: "#e53502", // 500
-        accent1Muted: "#fe4e1b", // 400
+        // primary base: #4b97ff
+        primary: "#4b97ff", // 300
+        primaryMuted: "#004ab4", // 600
+        primaryExtraMuted: "#003582", // 700
 
-        accent2: "#e6e309", // 500
+        accent1: "#22ff8e", // 400
+        accent1Muted: "#0ee675", // 500
+
+        accent2: "#af1aff", // 400
 
         // text
         dark: "#262626", // 800
@@ -42,11 +43,12 @@ export const darkTheme = {
     // Temp fonts
     fonts: {
         title: "Spartan, sans-serif",
-        main: "ABeeZee, sans-serif",
+        main: "Spartan, sans-serif",
         project: "'Droid Serif', serif",
     },
     // Colors for layout
     colors: {
+        // primary base: #4b97ff
         primary: "#4b97ff", // 300
         primaryMuted: "#004ab4", // 600
         primaryExtraMuted: "#003582", // 700
@@ -56,16 +58,16 @@ export const darkTheme = {
 
         accent2: "#af1aff", // 400
 
-        // text
+        // text base: #ffffff
         dark: "#d9d9d9", // 100
         darkMuted: "#bfbfbf", // 200
         darkMild: "#a6a6a6", // 300
         darkEnhanced: "#59595955", // 600 , 55
 
-        // background
-        light: "#050505", // 900,
-        lightMild: "#050505EE", // 900 , EE
-        lightMuted: "#050505AA", // 900 , AA
+        // background base: #000000
+        light: "#262626", // 800,
+        lightMild: "#262626EE", // 800 , EE
+        lightMuted: "#262626AA", // 800 , AA
         lightEnhanced: "#8c8c8c", // 400
     },
     // Breakpoints for responsive design

@@ -64,8 +64,12 @@ export const BlogCard = styled.div`
     }
 `;
 export const CardContent = styled.div`
-    background-color: ${(props) => props.theme.colors.lightMild};
-    opacity: 0.8;
+    background: linear-gradient(
+        120deg,
+        ${(props) => props.theme.colors.accent1 + "A3"} 0%,
+        ${(props) => props.theme.colors.primary + "A3"} 50%,
+        ${(props) => props.theme.colors.accent2 + "A3"} 100%
+    );
     width: 100%;
     height: 100%;
     position: relative;
@@ -75,7 +79,12 @@ export const CardContent = styled.div`
     align-items: center;
     transition: 0.3s;
     &:hover {
-        opacity: 0.9;
+        background: linear-gradient(
+            120deg,
+            ${(props) => props.theme.colors.accent1 + "EE"} 0%,
+            ${(props) => props.theme.colors.primary + "EE"} 50%,
+            ${(props) => props.theme.colors.accent2 + "EE"} 100%
+        );
     }
 `;
 export const TitleContent = styled.div`
@@ -83,17 +92,21 @@ export const TitleContent = styled.div`
     z-index: 20;
     width: 100%;
     font-weight: 500;
-    color: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.dark};
+
+    ${BlogCard}:hover & {
+        display: none;
+    }
 `;
 
 export const HeaderThree = styled.h3`
     font-weight: 700;
     letter-spacing: 2px;
-    color: ${(props) => props.theme.colors.dark};
-    padding: 0.5rem 0;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
     margin-top: 1rem;
     transition: 0.3s;
-    font-size: ${(props) => (props.title ? "3.5rem" : "2.5rem")};
+    font-size: ${(props) => (props.title ? "3rem" : "2rem")};
 `;
 
 export const Hr = styled.hr`
@@ -101,22 +114,32 @@ export const Hr = styled.hr`
     height: 3px;
     margin: 10px auto;
     border: 0;
-    background: ${(props) => props.theme.colors.accent1};
+    background: linear-gradient(
+        120deg,
+        ${(props) => props.theme.colors.accent1} 0%,
+        ${(props) => props.theme.colors.primary} 50%,
+        ${(props) => props.theme.colors.accent2} 100%
+    );
 `;
 
 export const Intro = styled.div`
     margin: 0.5rem auto;
-    color: ${(props) => props.theme.colors.darkMild};
+    color: #ffffff;
     font-family: ${(props) => props.theme.fonts.title};
     font-style: italic;
     line-height: 18px;
+    display: none;
+
+    ${BlogCard}:hover & {
+        display: block;
+    }
 `;
 
 export const CardInfo = styled.p`
     width: 100%;
     padding: 0 50px;
     margin: 1.5rem;
-    color: ${(props) => props.theme.colors.darkMuted};
+    color: ${(props) => props.theme.colors.dark};
     font-style: 2rem;
     line-height: 24px;
     text-align: justify;
@@ -150,12 +173,17 @@ export const ExternalLinks = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${(props) => props.theme.colors.light};
+    color: #ffffff;
     opacity: 0.9;
     font-size: 1.6rem;
     padding: 1.25rem 2.5rem;
     margin: 0.5rem 1rem;
-    background: ${(props) => props.theme.colors.primary};
+    background: linear-gradient(
+        120deg,
+        ${(props) => props.theme.colors.accent1} -10%,
+        ${(props) => props.theme.colors.primary} 50%,
+        ${(props) => props.theme.colors.accent2} 110%
+    );
     border-radius: 15px;
     transition: 0.5s;
     width: 100%;
@@ -199,7 +227,7 @@ export const Modal = styled.div`
     height: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
-    z-index: 1;
+    z-index: 99;
     left: 0;
     top: 0;
     overflow: auto;
@@ -208,7 +236,7 @@ export const Modal = styled.div`
     }
 `;
 export const ModalContent = styled.div`
-    background-color: ${(props) => props.theme.colors.light};
+background-color: ${(props) => props.theme.colors.light};
     display: flex;
     flex-direction: column;
     align-items: center;

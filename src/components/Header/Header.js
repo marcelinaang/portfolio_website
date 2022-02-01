@@ -23,8 +23,7 @@ const Header = () => {
             <Div1>
                 <Link href="/">
                     <BrandLink>
-                        <BrandImage src="/favicon.ico" />
-                        <Span>Marcelina Anggraeni</Span>
+                        <BrandImage src="/images/brand.png" />
                     </BrandLink>
                 </Link>
             </Div1>

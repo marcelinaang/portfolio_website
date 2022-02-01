@@ -18,7 +18,7 @@ const BackgroundAnimation = () => {
                   darkTheme.colors.primary,
                   darkTheme.colors.accent2,
                   darkTheme.colors.darkMuted,
-                  0.15,
+                  0.08,
               ];
 
     return (

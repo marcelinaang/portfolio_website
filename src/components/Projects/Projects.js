@@ -82,7 +82,6 @@ const Projects = () => {
                                 <TitleContent>
                                     <HeaderThree>{title}</HeaderThree>
                                 </TitleContent>
-                                <Hr />
                                 <Intro>{subtitle}</Intro>
                             </CardContent>
                         </BlogCard>

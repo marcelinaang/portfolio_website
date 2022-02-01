@@ -2,11 +2,11 @@ import React from "react";
 import { AiFillGithub, AiFillLinkedin, AiFillMail } from "react-icons/ai";
 import { FaTelegram } from "react-icons/fa";
 
-import { SocialIcons } from "../Header/HeaderStyles";
 import {
     FooterWrapper,
     SocialContainer,
     SocialIconsContainer,
+    SocialIcons
 } from "./FooterStyles";
 
 const Footer = () => {

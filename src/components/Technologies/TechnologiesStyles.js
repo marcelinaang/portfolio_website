@@ -33,22 +33,10 @@ export const MainImage = styled.img`
 
 export const List = styled.ul`
     list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin: 3rem 0;
-
-    @media ${(props) => props.theme.breakpoints.lg} {
-        margin: 64px 0;
-    }
-
-    @media ${(props) => props.theme.breakpoints.md} {
-        margin: 64px 0;
-        gap: 24px;
-    }
+    display: flex;
+    flex-wrap: wrap;
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        display: flex;
         flex-direction: column;
         margin: 32px 0;
     }
@@ -86,34 +74,34 @@ export const ListTitle = styled.h4`
 `;
 
 export const ListParagraph = styled.p`
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 28px;
     color: ${(props) => props.theme.colors.darkMuted};
 
     @media ${(props) => props.theme.breakpoints.md} {
-        font-size: 16px;
-        line-height: 28px;
+        font-size: 14px;
+        line-height: 26px;
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 12px;
+        line-height: 20px;
     }
 `;
 
 export const ListItem = styled.li`
-    max-width: 320px;
+    width: 33.33%;
     display: flex;
     flex-direction: column;
-    color: ${(props) => props.theme.colors.primaryMuted};
+    padding-right: 5%;
 
     @media ${(props) => props.theme.breakpoints.md} {
-        max-width: 203px;
+        width: 50%;
     }
 
     @media ${(props) => props.theme.breakpoints.sm} {
         margin-bottom: 14px;
-        max-width: 320px;
+        width: 100%;
         flex-direction: row;
     }
 `;

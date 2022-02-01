@@ -1,6 +1,5 @@
 import React from "react";
-import { DiFirebase, DiReact } from "react-icons/di";
-import { FiFigma } from "react-icons/fi";
+import { DiAppstore, DiFirebase, DiReact } from "react-icons/di";
 import {
     Section,
     SectionDivider,
@@ -32,8 +31,7 @@ const Technologies = () => (
                 <ListContainer>
                     <ListTitle>Front-End</ListTitle>
                     <ListParagraph>
-                        Experienced with <br />
-                        React.js and Next.js
+                        Experienced with React.js and Next.js
                     </ListParagraph>
                 </ListContainer>
             </ListItem>
@@ -44,22 +42,18 @@ const Technologies = () => (
                 <ListContainer>
                     <ListTitle>Back-End</ListTitle>
                     <ListParagraph>
-                        Experienced with <br />
-                        Node.js, Express.js and Databases (PostgreSQL, MySQL,
-                        etc.)
+                        Experienced with Node.js, Express.js and Databases
+                        (PostgreSQL, MySQL, etc.)
                     </ListParagraph>
                 </ListContainer>
             </ListItem>
             <ListItem>
                 <ListIcon>
-                    <FiFigma size="2.25rem" />
+                    <DiAppstore size="3rem" />
                 </ListIcon>
                 <ListContainer>
                     <ListTitle>UI/UX</ListTitle>
-                    <ListParagraph>
-                        Experienced with <br />
-                        Figma
-                    </ListParagraph>
+                    <ListParagraph>Experienced with Figma</ListParagraph>
                 </ListContainer>
             </ListItem>
         </List>

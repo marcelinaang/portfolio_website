@@ -110,6 +110,24 @@ export const SocialContainer = styled.div`
     }
 `;
 
+// Social Icons
+
+export const SocialIcons = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    color: ${(props) => props.theme.colors.dark};
+    border-radius: 50px;
+    padding: 8px;
+    &:hover {
+        background-color: ${(props) => props.theme.colors.dark};
+        color: ${(props) => props.theme.colors.light};
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+`;
+
 export const LinkList = styled.ul`
     display: grid;
     grid-template-columns: repeat(3, minmax(85px, 220px));
