@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
 
@@ -8,7 +8,6 @@ import {
     CardContent,
     CardInfo,
     ExternalLinks,
-    GridContainer,
     HeaderThree,
     Hr,
     Intro,
@@ -22,6 +21,11 @@ import {
     CloseButton,
     ModalHeader,
     LinkName,
+    CarouselContainer,
+    CarouselMobileScrollNode,
+    CarouselButtons,
+    CarouselButton,
+    CarouselButtonDot,
 } from "./ProjectsStyles";
 import {
     Section,
@@ -32,10 +36,30 @@ import {
 import { projects } from "../../constants/constants";
 import { useScrollHandler } from "./useScrollHandler";
 
+const TOTAL_CAROUSEL_COUNT = projects.length;
+
 const Projects = () => {
     const [modalDisplay, setModalDisplay] = useState("none");
     const [projectDetails, setProjectDetails] = useState({});
     const { setScrollable } = useScrollHandler();
+    const [activeItem, setActiveItem] = useState(0);
+    const carouselRef = useRef();
+
+    const scroll = (node, left) => {
+        return node.scrollTo({ left, behavior: "smooth" });
+    };
+
+    const handleScroll = () => {
+        if (carouselRef.current) {
+            const index = Math.round(
+                (carouselRef.current.scrollLeft /
+                    (carouselRef.current.scrollWidth * 0.7)) *
+                    projects.length
+            );
+
+            setActiveItem(index);
+        }
+    };
 
     const handleOpen = (selectedProject) => {
         setModalDisplay("flex");
@@ -45,14 +69,24 @@ const Projects = () => {
 
     const handleClose = () => {
         setModalDisplay("none");
-        setScrollable(true)
+        setScrollable(true);
     };
+
+    // snap back to beginning of scroll when window is resized
+    // avoids a bug where content is covered up if coming from smaller screen
+    useEffect(() => {
+        const handleResize = () => {
+            scroll(carouselRef.current, 0);
+        };
+
+        window.addEventListener("resize", handleResize);
+    }, []);
 
     return (
         <Section id="projects">
             <SectionDivider />
             <SectionTitle main>Projects</SectionTitle>
-            <GridContainer>
+            <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
                 {projects.map(
                     ({
                         id,
@@ -63,36 +97,56 @@ const Projects = () => {
                         tags,
                         source,
                         visit,
-                    }) => (
-                        <BlogCard
-                            key={id}
-                            onClick={() =>
-                                handleOpen({
-                                    title,
-                                    description,
-                                    image,
-                                    tags,
-                                    source,
-                                    visit,
-                                })
-                            }
+                    }, index) => (
+                        <CarouselMobileScrollNode
+                            key={index}
+                            final={index === TOTAL_CAROUSEL_COUNT - 1}
                         >
-                            <BackgroundImg src={image} />
-                            <CardContent>
-                                <TitleContent>
-                                    <HeaderThree>{title}</HeaderThree>
-                                </TitleContent>
-                                <Intro>{subtitle}</Intro>
-                            </CardContent>
-                        </BlogCard>
+                            <BlogCard
+                                key={id}
+                                onClick={() =>
+                                    handleOpen({
+                                        title,
+                                        description,
+                                        image,
+                                        tags,
+                                        source,
+                                        visit,
+                                    })
+                                }
+                            >
+                                <BackgroundImg src={image} />
+                                <CardContent>
+                                    <TitleContent>
+                                        <HeaderThree>{title}</HeaderThree>
+                                    </TitleContent>
+                                    <Intro>{subtitle}</Intro>
+                                </CardContent>
+                            </BlogCard>
+                        </CarouselMobileScrollNode>
                     )
                 )}
-            </GridContainer>
+            </CarouselContainer>
+            <CarouselButtons>
+                {projects.map((item, index) => (
+                    <CarouselButton
+                        key={index}
+                        index={index}
+                        active={activeItem}
+                        onClick={(e) => handleClick(e, index)}
+                        type="button"
+                    >
+                        <CarouselButtonDot active={activeItem} />
+                    </CarouselButton>
+                ))}
+            </CarouselButtons>
             <Modal display={modalDisplay}>
                 <ModalContent>
                     <ModalHeader>
                         <TitleContent>
-                            <HeaderThree modal>{projectDetails.title}</HeaderThree>
+                            <HeaderThree modal>
+                                {projectDetails.title}
+                            </HeaderThree>
                         </TitleContent>
                         <CloseButton onClick={handleClose}>&times;</CloseButton>
                     </ModalHeader>
@@ -112,7 +166,10 @@ const Projects = () => {
                             <FaGithub />
                             <LinkName>Code</LinkName>
                         </ExternalLinks>
-                        <ExternalLinks href={projectDetails.visit} target="_blank">
+                        <ExternalLinks
+                            href={projectDetails.visit}
+                            target="_blank"
+                        >
                             <BiLinkExternal />
                             <LinkName>Visit</LinkName>
                         </ExternalLinks>

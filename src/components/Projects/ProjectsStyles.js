@@ -11,27 +11,87 @@ export const BackgroundImg = styled.img`
     border-radius: 10px;
 `;
 
-export const GridContainer = styled.section`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    padding: 3rem;
-    place-items: center;
-    column-gap: 2rem;
-    row-gap: 3rem;
-    margin-bottom: 3rem;
-    @media ${(props) => props.theme.breakpoints.lg} {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 2.5rem 0;
+
+export const CarouselContainer = styled.ul`
+    max-width: 1040px;
+    padding: 0rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* overflow-x: hidden; */
+
+    margin-left: 32px;
+    &:first-of-type {
+        margin-left: 0px;
     }
-    @media ${(props) => props.theme.breakpoints.sm} {
-        display: flex;
-        flex-direction: column;
-        padding: 2rem;
-        padding-bottom: 0;
+
+    margin-bottom: 80px;
+
+    //remove scrollbar
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        touch-action: pan-x;
+        justify-content: initial;
+        margin-bottom: 8px;
     }
 `;
+export const CarouselMobileScrollNode = styled.div`
+    @media ${(props) => props.theme.breakpoints.lg} {
+        width: 50%;
+    }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        display: flex;
+        min-width: ${({ final }) => (final ? `120%;` : `min-content`)};
+    }
+`;
+
+export const CarouselButtons = styled.div`
+    width: 288px;
+
+    display: none;
+    visibility: hidden;
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        display: flex;
+        visibility: visible;
+        margin-bottom: 48px;
+    }
+`;
+export const CarouselButton = styled.button`
+    box-sizing: border-box;
+    background: none;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    margin-right: 4px;
+    opacity: ${(props) => (props.active === props.index ? `1` : `.33`)};
+    transform: ${(props) =>
+        props.active === props.index ? `scale(1.6)` : `scale(1)`};
+
+    &:focus {
+        outline: none;
+    }
+`;
+
+export const CarouselButtonDot = styled.div`
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    width: 3px;
+    height: 3px;
+`;
+
 export const BlogCard = styled.div`
     overflow: hidden;
     position: relative;
@@ -40,6 +100,7 @@ export const BlogCard = styled.div`
     text-align: center;
     width: 400px;
     height: 225px;
+    margin-bottom: 3rem;
     transition: 0.3s;
     &:hover {
         transform: scale(1.05);
@@ -53,6 +114,8 @@ export const BlogCard = styled.div`
     @media ${(props) => props.theme.breakpoints.md} {
         width: 400px;
         height: 225px;
+        margin-bottom: 0;
+        margin-right: 2rem;
     }
     @media ${(props) => props.theme.breakpoints.sm} {
         width: 320px;

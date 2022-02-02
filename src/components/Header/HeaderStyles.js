@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     box-sizing: content-box;
     display: flex;    
+    align-content: center;
     max-width: 1040px;
     margin: 0 auto;
     padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
@@ -33,7 +34,7 @@ export const Div2 = styled.div`
     display: flex;
     flex-grow: 1;
     justify-content: flex-start;
-    align-items: center;
+    align-items: end;
     padding: ${(props) => (props.nopadding ? "0" : "0 48px")};
 
     @media ${(props) => props.theme.breakpoints.md} {
@@ -49,7 +50,7 @@ export const Div3 = styled.div`
 // Brand
 export const BrandImage = styled.img`
     width: auto;
-    height: 5rem;
+    height: 3.75rem;
 `;
 export const BrandLink = styled.a`
     display: flex;
