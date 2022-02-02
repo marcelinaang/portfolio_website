@@ -112,7 +112,7 @@ const Projects = () => {
                             <FaGithub />
                             <LinkName>Code</LinkName>
                         </ExternalLinks>
-                        <ExternalLinks href={projectDetails.visit}>
+                        <ExternalLinks href={projectDetails.visit} target="_blank">
                             <BiLinkExternal />
                             <LinkName>Visit</LinkName>
                         </ExternalLinks>
