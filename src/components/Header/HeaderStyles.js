@@ -2,63 +2,54 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 2rem;
-    padding: 1rem;
-    padding-top: 2rem;
+    box-sizing: content-box;
+    display: flex;    
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        padding: ${(props) => (props.nopadding ? "0" : "24px 48px 0")};
+        width: calc(100vw - 96px);
+    }
 
     @media ${(props) => props.theme.breakpoints.sm} {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(60px);
-        grid-column-gap: 0.5rem;
-        grid-row-gap: 0.5rem;
+        padding: ${(props) => (props.nopadding ? "0" : "16px 16px 0")};
+        width: calc(100vw - 32px);
     }
-`;
-export const Span = styled.span`
-    font-size: 2rem;
-    white-space: nowrap;
-    @media ${(props) => props.theme.breakpoints.sm} {
-        font-size: 1.5rem;
-    }
+}
 `;
 export const Div1 = styled.div`
-    grid-area: 1 / 1 / 1 / 1;
     display: flex;
     flex-direction: row;
     align-content: center;
-    @media ${(props) => props.theme.breakpoints.sm} {
-        grid-area: 1 / 1 / 2 / 3;
+    width: 14.5rem;
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        flex-grow: 1;
     }
 `;
 export const Div2 = styled.div`
-    grid-area:1 / 2 / 1 / 5;
     display: flex;
+    flex-grow: 1;
     justify-content: flex-start;
     align-items: center;
+    padding: ${(props) => (props.nopadding ? "0" : "0 48px")};
+
     @media ${(props) => props.theme.breakpoints.md} {
-        grid-area: 1 / 3 / 2 / 3;
-    }
-    @media ${(props) => props.theme.breakpoints.sm} {
         display: none;
     }
 `;
 export const Div3 = styled.div`
-    grid-area: 1 / 8 / 2 / 8;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 1rem;
 `;
 
 // Brand
 export const BrandImage = styled.img`
     width: auto;
     height: 5rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
 `;
 export const BrandLink = styled.a`
     display: flex;
@@ -72,28 +63,27 @@ export const BrandLink = styled.a`
         opacity: 1;
         cursor: pointer;
     }
-    @media ${(props) => props.theme.breakpoints.sm} {
-        padding: 0.5rem;
-    }
 `;
 
 // Navigation Links
+export const LinkWrapper = styled.li`
+    & + & {
+        margin-left: 2rem;
+    }
+`;
 export const NavLink = styled.a`
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     line-height: 32px;
-    padding: 1rem;
     color: ${(props) => props.theme.colors.darkMuted};
     transition: 0.4s ease;
+
     &:hover {
         color: ${(props) => props.theme.colors.dark};
         opacity: 1;
         cursor: pointer;
-    }
-    @media ${(props) => props.theme.breakpoints.lg} {
-        padding: 0.75rem;
     }
 `;
 

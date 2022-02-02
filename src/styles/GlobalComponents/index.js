@@ -29,7 +29,7 @@ export const SectionTitle = styled.h2`
     line-height: ${(props) => (props.main ? "48px" : "60px")};
     width: max-content;
     max-width: 100%;
-    background: ${(props) => props.hero ? props.theme.colors.dark : props.theme.colors.darkMuted};
+    background: ${(props) => props.theme.colors.dark};
     backgorund-clip: text;
     -webkit-background-clip: text;
     color: transparent;

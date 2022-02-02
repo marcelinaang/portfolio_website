@@ -92,7 +92,7 @@ const Projects = () => {
                 <ModalContent>
                     <ModalHeader>
                         <TitleContent>
-                            <HeaderThree>{projectDetails.title}</HeaderThree>
+                            <HeaderThree modal>{projectDetails.title}</HeaderThree>
                         </TitleContent>
                         <CloseButton onClick={handleClose}>&times;</CloseButton>
                     </ModalHeader>

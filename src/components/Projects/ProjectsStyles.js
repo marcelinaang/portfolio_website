@@ -66,9 +66,9 @@ export const BlogCard = styled.div`
 export const CardContent = styled.div`
     background: linear-gradient(
         120deg,
-        ${(props) => props.theme.colors.accent1 + "A3"} 0%,
-        ${(props) => props.theme.colors.primary + "A3"} 50%,
-        ${(props) => props.theme.colors.accent2 + "A3"} 100%
+        ${(props) => props.theme.colors.accent1 + "AA"} 0%,
+        ${(props) => props.theme.colors.primary + "99"} 50%,
+        ${(props) => props.theme.colors.accent2 + "88"} 100%
     );
     width: 100%;
     height: 100%;
@@ -81,9 +81,9 @@ export const CardContent = styled.div`
     &:hover {
         background: linear-gradient(
             120deg,
-            ${(props) => props.theme.colors.accent1 + "EE"} 0%,
+            ${(props) => props.theme.colors.accent1 + "EE"} -20%,
             ${(props) => props.theme.colors.primary + "EE"} 50%,
-            ${(props) => props.theme.colors.accent2 + "EE"} 100%
+            ${(props) => props.theme.colors.accent2 + "EE"} 120%
         );
     }
 `;
@@ -102,9 +102,9 @@ export const TitleContent = styled.div`
 export const HeaderThree = styled.h3`
     font-weight: 700;
     letter-spacing: 2px;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
+    color: ${(props) => (props.modal ? props.theme.dark : "#ffffff")};
+    padding: ${(props) => (props.modal ? '0.5rem 1rem': '0')};
+    
     transition: 0.3s;
     font-size: ${(props) => (props.title ? "3rem" : "2rem")};
 `;
@@ -224,6 +224,7 @@ export const Modal = styled.div`
     flex-direction: column;
     align-items: center;
     position: fixed;
+    width: 100%;
     height: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -236,23 +237,25 @@ export const Modal = styled.div`
     }
 `;
 export const ModalContent = styled.div`
-background-color: ${(props) => props.theme.colors.light};
+    background-color: ${(props) => props.theme.colors.light};
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
     width: 80%;
+    max-width: 900px;
     padding: 1.5rem 0;
     @media ${(props) => props.theme.breakpoints.md} {
         width: 100%;
+        height: 100%;
     }
 `;
 export const ModalHeader = styled.div`
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     width: 100%;
-    padding: 0 1.5rem;
+    padding: 1.5rem 1.5rem 0;
 `;
 export const CloseButton = styled.span`
     font-family: ${(props) => props.theme.fonts.title};

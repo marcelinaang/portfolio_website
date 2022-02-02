@@ -10,9 +10,8 @@ import {
     Div1,
     Div2,
     Div3,
+    LinkWrapper,
     NavLink,
-    SocialIcons,
-    Span,
 } from "./HeaderStyles";
 
 const Header = () => {
@@ -28,21 +27,21 @@ const Header = () => {
                 </Link>
             </Div1>
             <Div2>
-                <li>
+                <LinkWrapper>
                     <Link href="#projects">
                         <NavLink>Projects</NavLink>
                     </Link>
-                </li>
-                <li>
+                </LinkWrapper>
+                <LinkWrapper>
                     <Link href="#tech">
                         <NavLink>Technologies</NavLink>
                     </Link>
-                </li>
-                <li>
+                </LinkWrapper>
+                <LinkWrapper>
                     <Link href="#about">
                         <NavLink>About</NavLink>
                     </Link>
-                </li>
+                </LinkWrapper>
             </Div2>
             <Div3>
                 <Toggle theme={theme} toggleTheme={themeToggler} />

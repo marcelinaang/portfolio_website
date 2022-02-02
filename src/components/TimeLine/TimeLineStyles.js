@@ -21,7 +21,14 @@ export const CarouselContainer = styled.ul`
         display: none;
     }
 
+    @media ${(props) => props.theme.breakpoints.lg} {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
     @media ${(props) => props.theme.breakpoints.md} {
+        justify-content: space-between;
+        flex-wrap: nowrap;
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch;
         scroll-snap-type: x mandatory;
@@ -31,6 +38,10 @@ export const CarouselContainer = styled.ul`
     }
 `;
 export const CarouselMobileScrollNode = styled.div`
+    @media ${(props) => props.theme.breakpoints.lg} {
+        width: 50%;
+    }
+
     @media ${(props) => props.theme.breakpoints.md} {
         display: flex;
         min-width: ${({ final }) => (final ? `120%;` : `min-content`)};
@@ -42,20 +53,21 @@ export const CarouselItem = styled.div`
     max-width: 240px;
     padding: 2rem;
     background: linear-gradient(
-        22.5deg,
-        ${(props) => props.theme.colors.primary + "00"} 65%,
-        ${(props) => props.theme.colors.primary + "FF"} 165%
+        -22.5deg,
+        ${(props) => props.theme.colors.primary + "00"} 60%,
+        ${(props) => props.theme.colors.primary + "FF"} 140%
     );
+
+    @media ${(props) => props.theme.breakpoints.lg} {
+        max-width: 100%;
+        margin-bottom: 5rem;
+    }
 
     @media ${(props) => props.theme.breakpoints.md} {
         margin-left: 32px;
         min-width: 240px;
         min-height: 135px;
-        background: linear-gradient(
-            22.5deg,
-            ${(props) => props.theme.colors.primary + "00"} 65%,
-            ${(props) => props.theme.colors.primary + "FF"} 165%
-        );
+        margin-bottom: 0rem;
         padding: 2rem;
         align-content: start;
         scroll-snap-align: start;
@@ -75,7 +87,16 @@ export const CarouselItemTitle = styled.h4`
     line-height: 48px;
     letter-spacing: 0.02em;
     display: flex;
-    color: ${(props) => props.theme.colors.dark};
+    /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
+    background: linear-gradient(
+        120deg,
+        ${(props) => props.theme.colors.dark} 25%,
+        ${(props) => props.theme.colors.darkMuted} 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
     margin-bottom: 8px;
 
     @media ${(props) => props.theme.breakpoints.md} {
@@ -87,6 +108,7 @@ export const CarouselItemTitle = styled.h4`
     @media ${(props) => props.theme.breakpoints.sm} {
         font-size: 20px;
         line-height: 24px;
+        -webkit-text-fill-color: ${(props) => props.theme.colors.dark};
     }
 `;
 export const CarouselItemImg = styled.svg`
