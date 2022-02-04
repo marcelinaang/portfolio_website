@@ -1,5 +1,16 @@
 export const projects = [
     {
+        title: "Alan AI News",
+        subtitle: "Voice Control News App",
+        description:
+            "The app features conversational voice controlled news using Alan AI. Alan AI is a revolutionary speech recognition software that allows voice capabilities to be added to the applications. It allows user to control absolutely everything in the app using their voice. Another huge benefit is that it's extremely easy to integrate it.",
+        image: "/images/5.png",
+        tags: ["React", "Alan AI"],
+        source: "https://github.com/marcelinaang/alan_ai_news",
+        visit: "alan-ai-news-marcelinaanggraeni.netlify.app",
+        id: 5,
+    },
+    {
         title: "Cryptoverse",
         subtitle: "Cryptocurrency App",
         description:

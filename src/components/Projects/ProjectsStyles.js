@@ -11,7 +11,6 @@ export const BackgroundImg = styled.img`
     border-radius: 10px;
 `;
 
-
 export const CarouselContainer = styled.ul`
     max-width: 1040px;
     padding: 0rem;
@@ -85,7 +84,7 @@ export const CarouselButton = styled.button`
 `;
 
 export const CarouselButtonDot = styled.div`
-    background-color: white;
+    background-color: ${(props) => props.theme.colors.dark};
     border-radius: 10px;
     margin: auto;
     width: 3px;
@@ -116,6 +115,16 @@ export const BlogCard = styled.div`
         height: 225px;
         margin-bottom: 0;
         margin-right: 2rem;
+
+        ${(props) =>
+            props.active === props.index ? `opacity: 1` : `opacity: 0.5`};
+
+        &:hover {
+            transform: scale(1);
+            box-shadow: 1px 1px 8px
+                ${(props) => props.theme.colors.lightEnhanced};
+            cursor: pointer;
+        }
     }
     @media ${(props) => props.theme.breakpoints.sm} {
         width: 320px;
@@ -160,14 +169,20 @@ export const TitleContent = styled.div`
     ${BlogCard}:hover & {
         display: none;
     }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        ${BlogCard}:hover & {
+            display: block;
+        }
+    }
 `;
 
 export const HeaderThree = styled.h3`
     font-weight: 700;
     letter-spacing: 2px;
     color: ${(props) => (props.modal ? props.theme.dark : "#ffffff")};
-    padding: ${(props) => (props.modal ? '0.5rem 1rem': '0')};
-    
+    padding: ${(props) => (props.modal ? "0.5rem 1rem" : "0")};
+
     transition: 0.3s;
     font-size: ${(props) => (props.title ? "3rem" : "2rem")};
 `;
@@ -195,6 +210,12 @@ export const Intro = styled.div`
 
     ${BlogCard}:hover & {
         display: block;
+    }
+
+    @media ${(props) => props.theme.breakpoints.md} {
+        ${BlogCard}:hover & {
+            display: none;
+        }
     }
 `;
 

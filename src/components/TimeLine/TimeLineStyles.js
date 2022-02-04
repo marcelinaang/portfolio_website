@@ -162,7 +162,7 @@ export const CarouselButton = styled.button`
 `;
 
 export const CarouselButtonDot = styled.div`
-    background-color: white;
+background-color: ${(props) => props.theme.colors.dark};
     border-radius: 10px;
     margin: auto;
     width: 3px;

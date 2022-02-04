@@ -11,7 +11,7 @@ import { LeftSection } from "./HeroStyles";
 const Hero = () => (
     <Section row nopadding>
         <LeftSection>
-            <SectionTitle main center hero>
+            <SectionTitle main center>
                 Welcome to <br />
                 My Professional Portfolio
             </SectionTitle>

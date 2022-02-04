@@ -35,6 +35,8 @@ import {
 
 import { projects } from "../../constants/constants";
 import { useScrollHandler } from "./useScrollHandler";
+import { lightTheme, darkTheme } from "../../themes/variables";
+import { useDarkMode } from "../../components/DarkToggler/useDarkMode";
 
 const TOTAL_CAROUSEL_COUNT = projects.length;
 
@@ -44,16 +46,62 @@ const Projects = () => {
     const { setScrollable } = useScrollHandler();
     const [activeItem, setActiveItem] = useState(0);
     const carouselRef = useRef();
+    const [screenWidth, setScreenWidth] = useState(getWindowDimensions());
+
+    const { theme } = useDarkMode();
+    const [mdBreakPoint] =
+        theme === "light"
+            ? [
+                  parseInt(
+                      lightTheme.breakpoints.md
+                          .split(" ")[3]
+                          .substring(
+                              0,
+                              lightTheme.breakpoints.md.split(" ")[3].length - 3
+                          )
+                  ),
+              ]
+            : [
+                  parseInt(
+                      darkTheme.breakpoints.md
+                          .split(" ")[3]
+                          .substring(
+                              0,
+                              lightTheme.breakpoints.md.split(" ")[3].length - 3
+                          )
+                  ),
+              ];
 
     const scroll = (node, left) => {
         return node.scrollTo({ left, behavior: "smooth" });
+    };
+
+    const handleClick = (e, i, item) => {
+        e.preventDefault();
+
+        // only show description for medium screen and below when clicked for the first time
+        if (screenWidth <= mdBreakPoint && activeItem != i) {
+            if (carouselRef.current) {
+                const scrollLeft = Math.floor(
+                    carouselRef.current.scrollWidth *
+                        0.84 *
+                        (i / projects.length)
+                );
+
+                scroll(carouselRef.current, scrollLeft);
+                setActiveItem(i);
+            }
+        } else {
+            // show modal
+            handleOpen(item);
+        }
     };
 
     const handleScroll = () => {
         if (carouselRef.current) {
             const index = Math.round(
                 (carouselRef.current.scrollLeft /
-                    (carouselRef.current.scrollWidth * 0.7)) *
+                    (carouselRef.current.scrollWidth * 0.84)) *
                     projects.length
             );
 
@@ -72,14 +120,21 @@ const Projects = () => {
         setScrollable(true);
     };
 
+    function getWindowDimensions() {
+        return window.innerWidth;
+    }
+
     // snap back to beginning of scroll when window is resized
     // avoids a bug where content is covered up if coming from smaller screen
     useEffect(() => {
         const handleResize = () => {
             scroll(carouselRef.current, 0);
+            setScreenWidth(getWindowDimensions());
         };
 
-        window.addEventListener("resize", handleResize);
+        const handler = window.addEventListener("resize", handleResize);
+
+        return handler;
     }, []);
 
     return (
@@ -88,27 +143,34 @@ const Projects = () => {
             <SectionTitle main>Projects</SectionTitle>
             <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
                 {projects.map(
-                    ({
-                        id,
-                        title,
-                        subtitle,
-                        image,
-                        description,
-                        tags,
-                        source,
-                        visit,
-                    }, index) => (
+                    (
+                        {
+                            id,
+                            title,
+                            subtitle,
+                            image,
+                            description,
+                            tags,
+                            source,
+                            visit,
+                        },
+                        index
+                    ) => (
                         <CarouselMobileScrollNode
                             key={index}
                             final={index === TOTAL_CAROUSEL_COUNT - 1}
                         >
                             <BlogCard
+                                index={index}
+                                active={activeItem}
                                 key={id}
-                                onClick={() =>
-                                    handleOpen({
+                                onClick={(e) =>
+                                    handleClick(e, index, {
+                                        id,
                                         title,
-                                        description,
+                                        subtitle,
                                         image,
+                                        description,
                                         tags,
                                         source,
                                         visit,
