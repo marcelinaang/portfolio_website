@@ -7,7 +7,7 @@ export const projects = [
         image: "/images/5.png",
         tags: ["React", "Alan AI"],
         source: "https://github.com/marcelinaang/alan_ai_news",
-        visit: "alan-ai-news-marcelinaanggraeni.netlify.app",
+        visit: "https://alan-ai-news-marcelinaanggraeni.netlify.app",
         id: 5,
     },
     {
