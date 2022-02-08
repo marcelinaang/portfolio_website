@@ -1,5 +1,16 @@
 export const projects = [
     {
+        title: "Memories",
+        subtitle: "MERN App",
+        description:
+            "Using MERN (MongoDB, Express, React, Node) stack, this app demonstrates CRUD (Create, Read, Update, Delete) operation in a web application called Memories. This app allows user to post and like memories.",
+        image: "/images/6.png",
+        tags: ["React", "Redux", "Node", "Express", "MongoDB"],
+        source: "https://github.com/marcelinaang/memories",
+        visit: "https://memories-marcelinaanggraeni.netlify.app/",
+        id: 6,
+    },
+    {
         title: "Alan AI News",
         subtitle: "Voice Control News App",
         description:
