@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef  } from "react";
+import { CSSTransition } from "react-transition-group";
+
 import ReactPortal from "./ReactPortal";
 import {
     ModalWrapper,
@@ -9,6 +11,8 @@ import {
 import { HeaderThree, TitleContent } from "../Projects/ProjectsStyles";
 
 const Modal = ({ children, isOpen, handleClose, title }) => {
+    const nodeRef = useRef(null);
+
     useEffect(() => {
         const closeOnEscapeKey = (e) =>
             e.key === "Escape" ? handleClose() : null;
@@ -18,23 +22,29 @@ const Modal = ({ children, isOpen, handleClose, title }) => {
         };
     }, [handleClose]);
 
-    console.log(isOpen);
-
-    if (!isOpen) return null;
-
     return (
         <ReactPortal wrapperId="react-portal-modal-container">
-            <ModalWrapper>
-                <ModalContent>
-                    <ModalHeader>
-                        <TitleContent>
-                            <HeaderThree modal>{title}</HeaderThree>
-                        </TitleContent>
-                        <CloseButton onClick={handleClose}>&times;</CloseButton>
-                    </ModalHeader>
-                    {children}
-                </ModalContent>
-            </ModalWrapper>
+            <CSSTransition
+                in={isOpen}
+                timeout={{ entry: 0, exit: 300 }}
+                unmountOnExit
+                classNames="modal"
+                nodeRef={nodeRef}
+            >
+                <ModalWrapper ref={nodeRef}>
+                    <ModalContent>
+                        <ModalHeader>
+                            <TitleContent>
+                                <HeaderThree modal>{title}</HeaderThree>
+                            </TitleContent>
+                            <CloseButton onClick={handleClose}>
+                                &times;
+                            </CloseButton>
+                        </ModalHeader>
+                        {children}
+                    </ModalContent>
+                </ModalWrapper>
+            </CSSTransition>
         </ReactPortal>
     );
 };

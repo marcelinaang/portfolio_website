@@ -80,9 +80,7 @@ const Projects = () => {
         if (screenWidth <= mdBreakPoint && activeItem != i) {
             if (carouselRef.current) {
                 const scrollLeft = Math.floor(
-                    carouselRef.current.scrollWidth *
-                        0.84 *
-                        (i / projects.length)
+                    carouselRef.current.scrollWidth * (i / projects.length)
                 );
 
                 scroll(carouselRef.current, scrollLeft);
@@ -98,7 +96,7 @@ const Projects = () => {
         if (carouselRef.current) {
             const index = Math.round(
                 (carouselRef.current.scrollLeft /
-                    (carouselRef.current.scrollWidth * 0.84)) *
+                    carouselRef.current.scrollWidth) *
                     projects.length
             );
 

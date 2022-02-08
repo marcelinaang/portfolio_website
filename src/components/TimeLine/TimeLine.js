@@ -46,7 +46,7 @@ const Timeline = () => {
         if (carouselRef.current) {
             const scrollLeft = Math.floor(
                 carouselRef.current.scrollWidth *
-                    0.7 *
+                    0.8 *
                     (i / TimeLineData.length)
             );
 
@@ -58,7 +58,7 @@ const Timeline = () => {
         if (carouselRef.current) {
             const index = Math.round(
                 (carouselRef.current.scrollLeft /
-                    (carouselRef.current.scrollWidth * 0.7)) *
+                    (carouselRef.current.scrollWidth * 0.8)) *
                     TimeLineData.length
             );
 
