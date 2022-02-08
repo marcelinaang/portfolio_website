@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { BiLinkExternal } from "react-icons/bi";
+import Modal from "../Modal/Modal";
 
 import {
     BackgroundImg,
@@ -16,10 +17,6 @@ import {
     TitleContent,
     UtilityList,
     Img,
-    Modal,
-    ModalContent,
-    CloseButton,
-    ModalHeader,
     LinkName,
     CarouselContainer,
     CarouselMobileScrollNode,
@@ -34,14 +31,14 @@ import {
 } from "../../styles/GlobalComponents";
 
 import { projects } from "../../constants/constants";
-import { useScrollHandler } from "./useScrollHandler";
+import { useScrollHandler } from "../Modal/useScrollHandler";
 import { lightTheme, darkTheme } from "../../themes/variables";
 import { useDarkMode } from "../../components/DarkToggler/useDarkMode";
 
 const TOTAL_CAROUSEL_COUNT = projects.length;
 
 const Projects = () => {
-    const [modalDisplay, setModalDisplay] = useState("none");
+    const [modalDisplay, setModalDisplay] = useState(false);
     const [projectDetails, setProjectDetails] = useState({});
     const { setScrollable } = useScrollHandler();
     const [activeItem, setActiveItem] = useState(0);
@@ -110,13 +107,13 @@ const Projects = () => {
     };
 
     const handleOpen = (selectedProject) => {
-        setModalDisplay("flex");
+        setModalDisplay(true);
         setProjectDetails(selectedProject);
         setScrollable(false);
     };
 
     const handleClose = () => {
-        setModalDisplay("none");
+        setModalDisplay(false);
         setScrollable(true);
     };
 
@@ -202,41 +199,32 @@ const Projects = () => {
                     </CarouselButton>
                 ))}
             </CarouselButtons>
-            <Modal display={modalDisplay}>
-                <ModalContent>
-                    <ModalHeader>
-                        <TitleContent>
-                            <HeaderThree modal>
-                                {projectDetails.title}
-                            </HeaderThree>
-                        </TitleContent>
-                        <CloseButton onClick={handleClose}>&times;</CloseButton>
-                    </ModalHeader>
-                    <Img src={projectDetails.image} />
-                    <CardInfo>{projectDetails.description}</CardInfo>
-                    <div>
-                        <Hr />
-                        <TitleContent>Stack</TitleContent>
-                        <TagList>
-                            {projectDetails?.tags?.map((tag, i) => (
-                                <Tag key={i}>{tag}</Tag>
-                            ))}
-                        </TagList>
-                    </div>
-                    <UtilityList>
-                        <ExternalLinks href={projectDetails.source}>
-                            <FaGithub />
-                            <LinkName>Code</LinkName>
-                        </ExternalLinks>
-                        <ExternalLinks
-                            href={projectDetails.visit}
-                            target="_blank"
-                        >
-                            <BiLinkExternal />
-                            <LinkName>Visit</LinkName>
-                        </ExternalLinks>
-                    </UtilityList>
-                </ModalContent>
+            <Modal
+                isOpen={modalDisplay}
+                handleClose={handleClose}
+                title={projectDetails.title}
+            >
+                <Img src={projectDetails.image} />
+                <CardInfo>{projectDetails.description}</CardInfo>
+                <div>
+                    <Hr />
+                    <TitleContent>Stack</TitleContent>
+                    <TagList>
+                        {projectDetails?.tags?.map((tag, i) => (
+                            <Tag key={i}>{tag}</Tag>
+                        ))}
+                    </TagList>
+                </div>
+                <UtilityList>
+                    <ExternalLinks href={projectDetails.source}>
+                        <FaGithub />
+                        <LinkName>Code</LinkName>
+                    </ExternalLinks>
+                    <ExternalLinks href={projectDetails.visit} target="_blank">
+                        <BiLinkExternal />
+                        <LinkName>Visit</LinkName>
+                    </ExternalLinks>
+                </UtilityList>
             </Modal>
         </Section>
     );

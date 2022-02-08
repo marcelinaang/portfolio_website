@@ -228,7 +228,7 @@ export const CardInfo = styled.p`
     line-height: 24px;
     text-align: justify;
     @media ${(props) => props.theme.breakpoints.sm} {
-        padding: 1rem;
+        padding: 1.5rem;
     }
 `;
 
@@ -301,63 +301,10 @@ export const Tag = styled.li`
         padding: 0.5rem 2rem;
     }
 `;
-
-export const Modal = styled.div`
-    background-color: ${(props) => props.theme.colors.darkEnhanced};
-    display: ${(props) => `${props.display}`};
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    z-index: 99;
-    left: 0;
-    top: 0;
-    overflow: auto;
-    @media ${(props) => props.theme.breakpoints.md} {
-        padding: 0;
-    }
-`;
-export const ModalContent = styled.div`
-    background-color: ${(props) => props.theme.colors.light};
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 900px;
-    padding: 1.5rem 0;
-    @media ${(props) => props.theme.breakpoints.md} {
-        width: 100%;
-        height: 100%;
-    }
-`;
-export const ModalHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    width: 100%;
-    padding: 1.5rem 1.5rem 0;
-`;
-export const CloseButton = styled.span`
-    font-family: ${(props) => props.theme.fonts.title};
-    color: ${(props) => props.theme.colors.dark};
-    float: right;
-    font-size: 30px;
-    font-weight: bold;
-    &:hover {
-        text-decoration: none;
-        cursor: pointer;
-        color: ${(props) => props.theme.colors.darkMuted};
-    }
-`;
 export const Img = styled.img`
     margin: 1.5rem auto;
     max-width: calc(100% - 100px);
     max-height: 100%;
-    overflow: hidden;
     border-radius: 10px;
 
     @media ${(props) => props.theme.breakpoints.sm} {

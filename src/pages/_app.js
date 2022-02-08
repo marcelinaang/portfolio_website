@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { DarkModeProvider } from "../components/DarkToggler/useDarkMode";
-import { OuterScrollProvider } from "../components/Projects/useScrollHandler";
+import { OuterScrollProvider } from "../components/Modal/useScrollHandler";
 import Theme from "../styles/theme";
 
 export default function App({ Component, pageProps }) {

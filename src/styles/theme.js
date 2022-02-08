@@ -4,7 +4,7 @@ import GlobalStyles from "./globals";
 import { lightTheme, darkTheme } from "../themes/variables";
 
 import { useDarkMode } from "../components/DarkToggler/useDarkMode";
-import { useScrollHandler } from "../components/Projects/useScrollHandler";
+import { useScrollHandler } from "../components/Modal/useScrollHandler";
 
 const Theme = (props) => {
     const { children } = { ...props };
