@@ -1,5 +1,16 @@
 export const projects = [
     {
+        title: "Yeobi Hansik",
+        subtitle: "Brand/Company Website",
+        description:
+            ".....",
+        image: "/images/7.png",
+        tags: ["React", "Styled Component", "Smooth Scroll", "Instagram Feed"],
+        source: "",
+        visit: "https://yeobihansik.com/",
+        id: 7,
+    },
+    {
         title: "Memories",
         subtitle: "MERN App",
         description:
