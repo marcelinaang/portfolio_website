@@ -40,7 +40,7 @@ export const ModalContent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     border-radius: 10px;
     padding: 1.5rem 0 1.5rem;
     transition: all 0.3s ease-in-out;
@@ -67,7 +67,7 @@ export const ModalContent = styled.div`
 
     @media ${(props) => props.theme.breakpoints.md} {
         width: 100%;
-        height: 100%;
+        min-height: 100vh;
     }
 `;
 

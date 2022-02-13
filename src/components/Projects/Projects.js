@@ -190,7 +190,7 @@ const Projects = () => {
                         key={index}
                         index={index}
                         active={activeItem}
-                        onClick={(e) => handleClick(e, index)}
+                        onClick={(e) => handleClick(e, index, item)}
                         type="button"
                     >
                         <CarouselButtonDot active={activeItem} />
@@ -214,14 +214,24 @@ const Projects = () => {
                     </TagList>
                 </div>
                 <UtilityList>
-                    <ExternalLinks href={projectDetails.source}>
-                        <FaGithub />
-                        <LinkName>Code</LinkName>
-                    </ExternalLinks>
-                    <ExternalLinks href={projectDetails.visit} target="_blank">
-                        <BiLinkExternal />
-                        <LinkName>Visit</LinkName>
-                    </ExternalLinks>
+                    {projectDetails.source && (
+                        <ExternalLinks
+                            href={projectDetails.source}
+                            target="_blank"
+                        >
+                            <FaGithub />
+                            <LinkName>Code</LinkName>
+                        </ExternalLinks>
+                    )}
+                    {projectDetails.visit && (
+                        <ExternalLinks
+                            href={projectDetails.visit}
+                            target="_blank"
+                        >
+                            <BiLinkExternal />
+                            <LinkName>Visit</LinkName>
+                        </ExternalLinks>
+                    )}
                 </UtilityList>
             </Modal>
         </Section>
