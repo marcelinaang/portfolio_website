@@ -51,7 +51,10 @@ export default class MyDocument extends Document {
 
                     <link rel="apple-touch-icon" href="/logo192.png" />
                     {/* SEO optimization done manually */}
-                    <link rel="canonical" href="https://marcelinaanggraeni.com" />
+                    <link
+                        rel="canonical"
+                        href="https://marcelinaanggraeni.com"
+                    />
                     <meta
                         name="description"
                         content="Front end developer, QA, tech enthusiast. Provides website creation service (UI/UX design, development, deployment, etc.)."
@@ -59,6 +62,23 @@ export default class MyDocument extends Document {
                     <meta
                         name="robots"
                         content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+                    />
+                    {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+                    <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=G-E0LX822W4C"
+                    ></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E0LX822W4C', {
+              page_path: window.location.pathname,
+            });
+          `,
+                        }}
                     />
                 </Head>
                 <body>
