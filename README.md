@@ -6,3 +6,7 @@ Technologies used:
 
 UI:
 -   Styled Components 
+-   React Transition Group
+
+Analytics:
+-   Google Analytics
