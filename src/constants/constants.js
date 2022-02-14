@@ -3,9 +3,9 @@ export const projects = [
         title: "Yeobi Hansik",
         subtitle: "Brand/Company Website",
         description:
-            ".....",
+            "Using React combined with styled component for UI, this website features responsive design and CSS animations. The navigation bar is implemented with smooth scrolling that works accross different browsers (Chrome, Firefox, Safari, etc.) and enhanced with scroll detector to highlight currently displayed section. The about section is created with react elastic carousel that enables seamless transition between sub-sections. The gallery section is integrated with instagram feed via Instagram Basic Display API to display latest posts.",
         image: "/images/7.png",
-        tags: ["React", "Styled Component", "Smooth Scroll", "Instagram Feed"],
+        tags: ["React", "Styled Component", "Smooth Scroll", "React Elastic Carousel", "Instagram Feed"],
         source: "",
         visit: "https://yeobihansik.com/",
         id: 7,

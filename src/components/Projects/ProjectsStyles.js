@@ -51,7 +51,7 @@ export const CarouselMobileScrollNode = styled.div`
 
     @media ${(props) => props.theme.breakpoints.md} {
         display: flex;
-        min-width: ${({ final }) => (final ? `min-content;` : `min-content`)};
+        min-width: ${({ final }) => (final ? `80%;` : `min-content`)};
     }
 `;
 

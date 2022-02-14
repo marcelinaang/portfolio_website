@@ -67,7 +67,6 @@ export const ModalContent = styled.div`
 
     @media ${(props) => props.theme.breakpoints.md} {
         width: 100%;
-        min-height: 100vh;
     }
 `;
 
