@@ -10,3 +10,4 @@ UI:
 
 Analytics:
 -   Google Analytics
+-   Google Tag Manager

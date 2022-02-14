@@ -14,16 +14,16 @@ const Footer = () => {
         <FooterWrapper>
             <SocialIconsContainer>
                 <SocialContainer>
-                    <SocialIcons href="mailto:marcelina.ang@gmail.com">
+                    <SocialIcons href="mailto:marcelina.ang@gmail.com" target="_blank">
                         <AiFillMail size="3rem" />
                     </SocialIcons>
-                    <SocialIcons href="https://github.com/marcelinaang/">
+                    <SocialIcons href="https://github.com/marcelinaang/" target="_blank">
                         <AiFillGithub size="3rem" />
                     </SocialIcons>
-                    <SocialIcons href="https://www.linkedin.com/in/marcelinaang/">
+                    <SocialIcons href="https://www.linkedin.com/in/marcelinaang/" target="_blank">
                         <AiFillLinkedin size="3rem" />
                     </SocialIcons>
-                    <SocialIcons href="https://telegram.me/marcelina_ang">
+                    <SocialIcons href="https://telegram.me/marcelina_ang" target="_blank">
                         <FaTelegram size="3rem" />
                     </SocialIcons>
                 </SocialContainer>

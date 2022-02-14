@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
 
     useEffect(() => {
         const handleRouteChange = (url) => {
-            window.gtag("config", "G-123456789", {
+            window.gtag("config", "G-E0LX822W4C", {
                 page_path: url,
             });
         };
