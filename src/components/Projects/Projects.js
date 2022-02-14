@@ -172,7 +172,7 @@ const Projects = () => {
                                     })
                                 }
                             >
-                                <BackgroundImg src={image} />
+                                <BackgroundImg src={image} alt="project screenshot" />
                                 <CardContent>
                                     <TitleContent>
                                         <HeaderThree>{title}</HeaderThree>
@@ -202,7 +202,7 @@ const Projects = () => {
                 handleClose={handleClose}
                 title={projectDetails.title}
             >
-                <Img src={projectDetails.image} />
+                <Img src={projectDetails.image} alt="project screenshot" />
                 <CardInfo>{projectDetails.description}</CardInfo>
                 <div>
                     <Hr />

@@ -1,0 +1,5 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+Host: https://marcelinaanggraeni.com
+Sitemap: https://marcelinaanggraeni.com/sitemap.xml

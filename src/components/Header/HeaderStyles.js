@@ -52,7 +52,7 @@ export const BrandImage = styled.img`
     width: auto;
     height: 3.75rem;
 `;
-export const BrandLink = styled.a`
+export const BrandLink = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@ export const LinkWrapper = styled.li`
         margin-left: 2rem;
     }
 `;
-export const NavLink = styled.a`
+export const NavLink = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;

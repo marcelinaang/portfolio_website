@@ -22,7 +22,7 @@ const Header = () => {
             <Div1>
                 <Link href="/">
                     <BrandLink>
-                        <BrandImage src="/images/brand.png" />
+                        <BrandImage src="/images/brand.png" alt="brand logo"/>
                     </BrandLink>
                 </Link>
             </Div1>
